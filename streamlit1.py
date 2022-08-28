@@ -33,13 +33,7 @@ def web_app():
   T2M_toc = st.number_input("Temperature of Tocumen",0,10)
   
   input_data = T2M_toc
-  print (input_data)
+  print (str(input_data))
  
    
-
-  
-  
-  
-
-if st.button("Press here to make Prediction"):
-  run = web_app()
+run = web_app()
