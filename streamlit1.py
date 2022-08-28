@@ -31,32 +31,16 @@ def web_app():
   st.header("User Details")
   st.subheader("Kindely Enter The following Details in order to make a prediction")
   T2M_toc = st.number_input("Temperature of Tocumen",0,10)
-  QV2M_toc = st.number_input("Relative Humidity of Tocumen",0,10)
-  TQL_toc = st.number_input("Liquid Precipitation of Tocumen",0,10)
-  W2M_toc = st.number_input("Wind Speed of Tocumen",0,10)
-  T2M_san = st.number_input("Temperature of San",0,10)
-  QV2M_san = st.number_input("Relative Humidity of San",0,10)
-  TQL_san = st.number_input("Liquid Precipitation of San",0,10)
-  W2M_san = st.number_input("Wind Speed of San",0,10)
-  T2M_dav = st.number_input("Temperature of Dav",0,10)
-  QV2M_dav = st.number_input("Relative Humidity of Dav",0,10)
-  TQL_dav = st.number_input("Liquid Precipitation of Dav",0,10)
-  W2M_dav = st.number_input("Wind Speed of Dav",0,10)
-  Holiday_ID = st.number_input("Nature of Holiday",0,10)
-  holiday = st.number_input("Holiday",0,10)
-  school = st.number_input("School Holiday",0,10)
-  hour = st.number_input("Hour of Day",0,10)
-  month = st.number_input("Month",0,10)
-  day = st.str_input("Day of the Week",0,10)
   
-  input_data = T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day
+  input_data = T2M_toc
+  print (input_data)
   scaler = StandardScaler().fit(input_data.values)
   input_data = scaler.transform(input_data.values)
+   
 
-  x_train_scaled[col_names] = factors
   
-  result = model.predict([[input_data]])
-  st.text_area(label='Load predition is:- ',value=result , height= 100)
+  
+  
 
 if st.button("Press here to make Prediction"):
   run = web_app()
