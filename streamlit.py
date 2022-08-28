@@ -86,7 +86,7 @@ def web_app():
   
   
   result = model.predict(df)
-  return result
+  result
   
 run = web_app()
 
