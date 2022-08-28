@@ -33,7 +33,7 @@ def web_app():
   T2M_toc = st.number_input("Temperature of Tocumen",0,10)
   
   input_data = T2M_toc
-  print (str(input_data))
+  st.text_area(label='Load predition is:- ',value=input_data , height= 100)
  
    
 run = web_app()
