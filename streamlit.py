@@ -64,7 +64,7 @@ def web_app():
   hour = (hour-11.462323812673088)/6.905290140015345
   month = st.number_input("Month")
   month = (month-6.242094820815939)/3.4426341567092456
-  day = st.str_input("Day of the Week")
+  day = st.number_input("Day of the Week")
   day = (day-3.9887984127640226)/2.000950133623064
   
   
