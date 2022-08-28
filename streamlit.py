@@ -70,9 +70,9 @@ def web_app():
  
   import pandas as pd
 
-  data=[["T2M_toc",T2M_toc],["QV2M_toc",QV2M_toc],["TQL_toc",TQL_toc],["W2M_toc",W2M_toc],["T2M_san",T2M_san],["QV2M_san",QV2M_san],["TQL_san",TQL_san],["W2M_san",W2M_san],["T2M_dav",T2M_dav],["QV2M_dav",QV2M_dav],["TQL_dav",TQL_dav],["W2M_dav",W2M_dav],["Holiday_ID",Holiday_ID],["holiday",holiday],["school",school],["hour",hour],["month",month],["day",day]]
+  data=[['T2M_toc',T2M_toc1],['QV2M_toc',QV2M_toc1],['TQL_toc',TQL_toc1],['W2M_toc',W2M_toc1],['T2M_san',T2M_san1],['QV2M_san',QV2M_san1],['TQL_san',TQL_san1],['W2M_san',W2M_san1],['T2M_dav',T2M_dav1],['QV2M_dav',QV2M_dav1],['TQL_dav',TQL_dav1],['W2M_dav',W2M_dav1],['Holiday_ID',Holiday_ID1],['holiday',holiday1],['school',school1],['hour',hour1],['month',month1],['day',day1]]
 
-  df=pd.dataframe(data,columns=["T2M_toc","QV2M_toc","TQL_toc","W2M_toc","T2M_san","QV2M_san","TQL_san","W2M_san","T2M_dav","QV2M_dav","TQL_dav","W2M_dav","Holiday_ID","holiday","school",'hour","month","day"])
+  df=pd.dataframe(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
 
   #df
     
