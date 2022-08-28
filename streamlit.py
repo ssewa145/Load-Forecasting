@@ -90,5 +90,5 @@ def web_app():
 run = web_app()
 
 if st.button("Press here to make Prediction"):
-    st.text_area(label='Load predition is:- ',value=result , height= 100)
+    st.text_area(label='Load prediction is:- ',value='result' , height= 100)
   
