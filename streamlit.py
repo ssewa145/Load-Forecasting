@@ -70,15 +70,15 @@ def web_app():
  
   #import pandas as pd
 
-  #data={['T2M_toc',T2M_toc1],['QV2M_toc',QV2M_toc1],['TQL_toc',TQL_toc1],['W2M_toc',W2M_toc1],['T2M_san',T2M_san1],['QV2M_san',QV2M_san1],['TQL_san',TQL_san1],['W2M_san',W2M_san1],['T2M_dav',T2M_dav1],['QV2M_dav',QV2M_dav1],['TQL_dav',TQL_dav1],['W2M_dav',W2M_dav1],['Holiday_ID',Holiday_ID1],['holiday',holiday1],['school',school1],['hour',hour1],['month',month1],['day',day1]}
+  data=[T2M_toc1,QV2M_toc1,TQL_toc1,W2M_toc1,T2M_san1,QV2M_san1,TQL_san1,W2M_san1,T2M_dav1,QV2M_dav1,TQL_dav1,W2M_dav1,Holiday_ID1,holiday1,school1,hour1,month1,day1]
 
-  #df=pd.dataframe(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
+  df=pd.dataframe(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
 
   #df
     
-  data={'T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day':[T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day]}
+  #data={'T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day':[T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day]}
 
-  df=pd.dataframe(data)
+  #df=pd.dataframe(data)
                   
   #,index=[‘No.1’,’No.2’,’No.3’,’No.4’,'No.5','No.6','No.7','No.8','No.9','No.10','No.11','No.12','No.13','No.14','No.15','No.16','No.17,'No.18'])
 
