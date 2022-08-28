@@ -31,7 +31,7 @@ def web_app():
   st.header("User Details")
   st.subheader("Kindely Enter The following Details in order to make a prediction")
   T2M_toc = {st.number_input("Temperature of Tocumen",0,10)
-  T2M_toc = dict(T2M_toc)
+  
   T2M_toc = T2M_toc.reshape(-1, 1)
   
   object = StandardScaler()
