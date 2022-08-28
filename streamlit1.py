@@ -30,9 +30,9 @@ def web_app():
   """)
   st.header("User Details")
   st.subheader("Kindely Enter The following Details in order to make a prediction")
-  T2M_toc = {st.number_input("Temperature of Tocumen",0,10)
+  T2M_toc1 = {st.number_input("Temperature of Tocumen",0,10)
   
-  T2M_toc = (T2M_toc-27.39811537002067)/1.6761489507888916
+  T2M_toc = ((T2M_toc-27.39811537002067)/1.6761489507888916)
   
   st.text_area(label='Load predition is:- ',value=T2M_toc , height= 100)
   
