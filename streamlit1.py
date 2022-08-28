@@ -33,11 +33,11 @@ def web_app():
   T2M_toc = st.number_input("Temperature of Tocumen",0,10)
   QV2M_toc = st.number_input("Relative Humidity of Tocumen",0,10)
   
-  input_data = [T2M_toc,QV2M_toc]
-  scaler = StandardScaler().fit(input_data)
-  input_data = scaler.transform(input_data)
-
+  object = StandardScaler()
+  object.fit_transform(T2M_toc)
+  
   st.text_area(label='Load predition is:- ',value=input_data , height= 100)
+  
  
    
 run = web_app()
