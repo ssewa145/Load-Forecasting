@@ -34,8 +34,7 @@ def web_app():
   
   input_data = T2M_toc
   print (input_data)
-  scaler = StandardScaler().fit(input_data.values)
-  input_data = scaler.transform(input_data.values)
+ 
    
 
   
