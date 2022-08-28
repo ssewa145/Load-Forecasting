@@ -72,7 +72,7 @@ def web_app():
 
   data=[["T2M_toc",T2M_toc],["QV2M_toc",QV2M_toc],["TQL_toc",TQL_toc],["W2M_toc",W2M_toc],["T2M_san",T2M_san],["QV2M_san",QV2M_san],["TQL_san",TQL_san],["W2M_san",W2M_san],["T2M_dav",T2M_dav],["QV2M_dav",QV2M_dav],["TQL_dav",TQL_dav],["W2M_dav",W2M_dav],["Holiday_ID",Holiday_ID],["holiday",holiday],["school",school],["hour",hour],["month",month],["day",day]]
 
-  df=pd.dataframe(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
+  df=pd.dataframe(data,columns=["T2M_toc","QV2M_toc","TQL_toc","W2M_toc","T2M_san","QV2M_san","TQL_san","W2M_san","T2M_dav","QV2M_dav","TQL_dav","W2M_dav","Holiday_ID","holiday","school",'hour","month","day"])
 
   #df
     
