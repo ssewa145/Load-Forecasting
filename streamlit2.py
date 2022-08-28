@@ -46,7 +46,7 @@ def web_app():
   school = st.number_input("School Holiday",0,10)
   hour = st.number_input("Hour of Day",0,10)
   month = st.number_input("Month",0,10)
-  day = st.str_input("Day of the Week",0,10)
+  day = st.number_input("Day of the Week",0,10)
   
   input_data = T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day
   scaler = StandardScaler().fit(input_data.values)
