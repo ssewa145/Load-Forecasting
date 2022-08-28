@@ -74,7 +74,7 @@ def web_app():
 
   df=pd.DataFrame(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
 
-  #df
+  df
     
   #data={'T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day':[T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day]}
 
@@ -86,9 +86,10 @@ def web_app():
   
   
   result = model.predict(df)
+  return result
   
 run = web_app()
 
 if st.button("Press here to make Prediction"):
-    st.text_area(label='Load prediction is:- ',value=model.predict(df) , height= 100)
+    st.text_area(label='Load prediction is:- ',value=result , height= 100)
   
