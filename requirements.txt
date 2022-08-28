@@ -3,4 +3,3 @@ sklearn
 pandas
 tensorflow
 streamlit
-math
