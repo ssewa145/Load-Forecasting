@@ -41,7 +41,7 @@ def web_app():
   T2M_san = st.number_input("Temperature of San")
   T2M_san = (T2M-26.91410107611334)/3.0226171870424743
   QV2M_san = st.number_input("Relative Humidity of San")
-  QV2M_san = (QV2M_san-0.017842629823295996)0.0018943023405940354
+  QV2M_san = (QV2M_san-0.017842629823295996)/0.0018943023405940354
   TQL_san = st.number_input("Liquid Precipitation of San")
   TQL_san = (TQL_san-0.10629538179184062)/0.08632141691484443
   W2M_san = st.number_input("Wind Speed of San")
