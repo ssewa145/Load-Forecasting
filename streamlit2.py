@@ -55,7 +55,8 @@ def web_app():
  
   
   result = model.predict([[input_data]])
-  st.text_area(label='Load predition is:- ',value=result , height= 100)
+  
 
+run = web_app()
 if st.button("Press here to make Prediction"):
-  run = web_app()
+    st.text_area(label='Load predition is:- ',value=result , height= 100)
