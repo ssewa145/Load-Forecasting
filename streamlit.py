@@ -50,8 +50,8 @@ def web_app():
   day = st.str_input("Day of the Week",0,10)
   
   input_data = T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day
-  scaler = StandardScaler().fit(input_data)
-  input_data = scaler.transform(input_data)
+  scaler = StandardScaler().fit(input_data.values)
+  input_data = scaler.transform(input_data.values)
 
   x_train_scaled[col_names] = factors
   
