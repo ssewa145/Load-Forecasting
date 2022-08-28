@@ -10,7 +10,6 @@ Original file is located at
 pip install tensorflow
 
 import xgboost as xgb
-import tensorflow as tf
 import pandas as pd
 import streamlit as st
 from sklearn.compose import ColumnTransformer
