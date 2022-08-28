@@ -14,13 +14,26 @@ import streamlit as st
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
+from tensorflow.keras.optimizers import Adam as adam
+from tensorflow.python.keras.losses import MeanSquaredLogarithmicError
 
 from keras.initializers import glorot_uniform
 #Reading the model from JSON file
 with open('loadfc_model.json', 'r') as json_file:
     json_savedModel= json_file.read()
 #load the model architecture 
-model = tf.keras.models.model_from_json(json_savedModel)
+model_j = tf.keras.models.model_from_json(json_savedModel)
+model_j.summary()
+model_j.load_weights('loadfc_weights.h5')
+
+#compiling the model
+msle = MeanSquaredLogarithmicError()
+model_j.compile(
+    loss=msle, 
+    # optimizer=adam(learning_rate=learning_rate), 
+    optimizer='adam', 
+    metrics=[msle]
+)
 
 
 def web_app():
@@ -85,7 +98,7 @@ def web_app():
 #df
   
   
-  result = model.predict(df)
+  result = model_j.predict(df)
   result
   if st.button("Press here to make Prediction"):
     st.text_area(label='Load prediction is:- ',value=result , height= 100)
