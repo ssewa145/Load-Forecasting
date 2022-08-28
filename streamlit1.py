@@ -31,8 +31,9 @@ def web_app():
   st.header("User Details")
   st.subheader("Kindely Enter The following Details in order to make a prediction")
   T2M_toc = st.number_input("Temperature of Tocumen",0,10)
+  QV2M_toc = st.number_input("Relative Humidity of Tocumen",0,10)
   
-  input_data = T2M_toc
+  input_data = [T2M_toc,QV2M_toc]
   scaler = StandardScaler().fit(input_data)
   input_data = scaler.transform(input_data)
 
