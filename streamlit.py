@@ -68,17 +68,17 @@ def web_app():
   day = (day-3.9887984127640226)/2.000950133623064
   
  
-  #import pandas as pd
+  import pandas as pd
 
-   # data=[[‘Karan’,23],[‘Rohit’,22],[‘Sahil’,21],[‘Aryan’,24]]
+  data=[[‘T2M_toc’,T2M_toc],[‘QV2M_toc’,QV2M_toc],[‘TQL_toc’,TQL_toc],[‘W2M_toc’,W2M_toc],['T2M_san',T2M_san],['QV2M_san',QV2M_san],['TQL_san',TQL_san],['W2M_san',W2M_san],['T2M_dav',T2M_dav],['QV2M_dav',QV2M_dav],['TQL_dav',TQL_dav],['W2M_dav',W2M_dav],['Holiday_ID',Holiday_ID],['holiday',holiday],['school',school],['hour',hour],['month',month],['day',day]]
 
-    #df=pd.dataframe(data,columns=[‘Name’,’Age’])
+  df=pd.dataframe(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
 
-    #df
+  #df
     
-  data={'T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day':[T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day]}
+  #data={'T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day':[T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day]}
 
-  df=pd.dataframe(data,index=[‘No.1’,’No.2’,’No.3’,’No.4’,'No.5','No.6','No.7','No.8','No.9','No.10','No.11','No.12','No.13','No.14','No.15','No.16','No.17,'No.18'])
+  #df=pd.dataframe(data,index=[‘No.1’,’No.2’,’No.3’,’No.4’,'No.5','No.6','No.7','No.8','No.9','No.10','No.11','No.12','No.13','No.14','No.15','No.16','No.17,'No.18'])
 
 #df
   
