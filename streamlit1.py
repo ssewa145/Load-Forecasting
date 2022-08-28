@@ -31,7 +31,7 @@ def web_app():
   """)
   st.header("User Details")
   st.subheader("Kindely Enter The following Details in order to make a prediction")
-  T2M_toc1 = {st.number_input("Temperature of Tocumen")
+  T2M_toc1 = st.number_input("Temperature of Tocumen")
     av1 = 27.39811537002067
     T2M_toc = T2M_toc1-av1
               #/1.6761489507888916
