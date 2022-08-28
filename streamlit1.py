@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1Osc_xxHZkLeTjc5KT3qYLN2gmTDIkMG6
 """
 
-
+import tensorflow as tf
 import xgboost as xgb
 import pandas as pd
 import streamlit as st
