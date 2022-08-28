@@ -39,7 +39,7 @@ def web_app():
   W2M_toc = st.number_input("Wind Speed of Tocumen")
   W2M_toc = (W2M_toc-13.400886189856779)/7.328792527364909
   T2M_san = st.number_input("Temperature of San")
-  T2M_san = (T2M-26.91410107611334)/3.0226171870424743
+  T2M_san = (T2M_san-26.91410107611334)/3.0226171870424743
   QV2M_san = st.number_input("Relative Humidity of San")
   QV2M_san = (QV2M_san-0.017842629823295996)/0.0018943023405940354
   TQL_san = st.number_input("Liquid Precipitation of San")
