@@ -11,6 +11,8 @@ import xgboost as xgb
 import tensorflow as tf
 import pandas as pd
 import streamlit as st
+import numpy
+from datetime import timedelta, date
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
@@ -34,6 +36,40 @@ model_j.compile(
     optimizer='adam', 
     metrics=[msle]
 )
+
+def peak_app()
+  st.write("""
+  # Peak Load
+  ## This will determine the peak demand for a given day
+  """)
+  st.header("The date input is required")
+  while True :
+    DOP = st.number_input('Date of Prediction ')
+    try :
+        DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
+        break
+    except ValueError:
+        print("Error: must be format dd/mm/yyyy ")
+        userkey = input("press 1 to try again or 0 to exit:")
+        if userkey == "0":
+            sys.exit()
+  data = pd.read_csv("continuous dataset.csv")
+  df = pd.read_csv("continuous dataset.csv")
+  df["datetime"] = pd.to_datetime(df["datetime"])
+  df.set_index("datetime").head(2)
+  df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
+  df.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
+  x_peak_demand = df.copy()
+  col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
+  factors = x_peak_demand[col_names]
+  scaler = StandardScaler().fit(factors.values)
+  factors = scaler.transform(factors.values)
+  x_peak_demand[col_names] = factors
+  result_peak = numpy.amax(model_j.predict(x_peak_demand))
+
+
+  if st.button("Click here to make the Peak Demand Prediction"):
+    st.text_area(label='Load prediction is:- ',value=result_peak , height= 100)
 
 
 def web_app():
@@ -104,5 +140,11 @@ def web_app():
     st.text_area(label='Load prediction is:- ',value=result , height= 100)
   
   
-run = web_app()
+st.button("Click here to determine peak demand for the day")
+st.button("Click here to determine peak demand for the day")
+
+if st.button("Click here to determine PEAK demand for the day"):
+    run = peak_app()
+if st.button("Click here to determine HOURLY demand for the day"):
+    run = web_app()
 
