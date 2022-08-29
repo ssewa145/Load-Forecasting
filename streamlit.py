@@ -75,7 +75,7 @@ def peak_app():
 
 
   if st.button("Click here to make the Peak Demand Prediction", key=3):
-    st.text_area(label='Load prediction is:- ',value=result_peak , height= 100)
+    st.text_area(label='Load prediction is:- ',value=result_peak , height= 100, key=6)
 
 
 def web_app():
@@ -142,8 +142,8 @@ def web_app():
   
   result = model_j.predict(df1)
   
-  if st.button("Click here to make the Prediction"):
-    st.text_area(label='Load prediction is:- ',value=result , height= 100)
+  if st.button("Click here to make the Prediction", key=4):
+    st.text_area(label='Load prediction is:- ',value=result , height= 100, key=5)
   
   
 if st.button("Click here to determine PEAK demand for the day", key=1):
