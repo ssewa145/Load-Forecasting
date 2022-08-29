@@ -140,10 +140,10 @@ def web_app():
     st.text_area(label='Load prediction is:- ',value=result , height= 100)
   
   
-st.button("Click here to determine peak demand for the day", key=1)
-    run = peak_app()
-st.button("Click here to determine peak demand for the day", key=2)
-    run = web_app()
+if st.button("Click here to determine peak demand for the day", key=1)
+  run = peak_app()
+if st.button("Click here to determine peak demand for the day", key=2)
+  run = web_app()
 #if st.button("Click here to determine PEAK demand for the day", key=1):
  #   run = peak_app()
 #if st.button("Click here to determine HOURLY demand for the day", key=2):
