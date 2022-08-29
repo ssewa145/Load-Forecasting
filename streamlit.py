@@ -46,7 +46,7 @@ def peak_app():
   """)
   st.header("The date input is required")
   while True :
-    DOP = input('Date of Prediction ')
+    DOP = st.input('Date of Prediction ')
     try :
         DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
         break
