@@ -45,17 +45,17 @@ def peak_app():
   ## This will determine the peak demand for a given day
   """)
   st.header("The date input is required")
-  #while True :
+  while True :
   DOP = st.date_input('Date of Prediction ',
                        datetime.date(2019, 7, 6))
-    #try :
-    #    DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
-    #    break
-    #except ValueError:
-    #    print("Error: must be format dd/mm/yyyy ")
-    #    userkey = input("press 1 to try again or 0 to exit:")
-    #    if userkey == "0":
-    #        sys.exit()
+    try :
+        DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
+        break
+    except ValueError:
+        print("Error: must be format dd/mm/yyyy ")
+        userkey = input("press 1 to try again or 0 to exit:")
+        if userkey == "0":
+            sys.exit()
   
   df = pd.read_csv("continuous dataset.csv")
   df["datetime"] = pd.to_datetime(df["datetime"])
