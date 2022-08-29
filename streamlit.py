@@ -13,6 +13,7 @@ import tensorflow as tf
 import pandas as pd
 import streamlit as st
 import numpy
+import sys
 from datetime import timedelta, date
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
@@ -46,10 +47,10 @@ def peak_app():
   st.header("The date input is required")
   while True :
     DOP = str(st.text_input('Date of Prediction '))
-     try :
+    try :
         DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
         break
-     except ValueError:
+    except ValueError:
         print("Error: must be format dd/mm/yyyy ")
         userkey = input("press 1 to try again or 0 to exit:")
         if userkey == "0":
