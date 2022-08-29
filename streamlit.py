@@ -37,7 +37,7 @@ model_j.compile(
     metrics=[msle]
 )
 
-def peak_app()
+def peak_app():
   st.write("""
   # Peak Load
   ## This will determine the peak demand for a given day
