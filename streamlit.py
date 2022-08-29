@@ -74,7 +74,7 @@ def peak_app():
   result_peak = numpy.amax(model_j.predict(x_peak_demand))
 
 
-  if st.button("Click here to make the Peak Demand Prediction"):
+  if st.button("Click here to make the Peak Demand Prediction", key=3):
     st.text_area(label='Load prediction is:- ',value=result_peak , height= 100)
 
 
