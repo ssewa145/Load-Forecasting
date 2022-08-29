@@ -101,7 +101,7 @@ def web_app():
   result = model_j.predict(df)
   
   if st.button("Click here to make the Prediction"):
-    st.text_area(label='Load prediction is:- ',value=result , ' height= 100)
+    st.text_area(label='Load prediction is:- ',value=result , height= 100)
   
   
 run = web_app()
