@@ -54,7 +54,7 @@ def peak_app():
         break
     except ValueError:
         print("Error: must be format dd/mm/yyyy ")
-        userkey = input("press 1 to try again or 0 to exit:")
+        userkey = st.number_input("press 1 to try again or 0 to exit:")
         if userkey == "0":
             sys.exit()
   
