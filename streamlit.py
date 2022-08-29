@@ -55,7 +55,7 @@ def peak_app():
         #userkey = input("press 1 to try again or 0 to exit:")
         #if userkey == "0":
             #sys.exit()
-  st.data = pd.read_csv("continuous dataset.csv")
+  
   df = pd.read_csv("continuous dataset.csv")
   df["datetime"] = pd.to_datetime(df["datetime"])
   df.set_index("datetime").head(2)
