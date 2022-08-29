@@ -46,10 +46,10 @@ def peak_app():
   st.header("The date input is required")
   while True :
     DOP = str(st.text_input('Date of Prediction '))
-    try :
+     try :
         DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
         break
-    except ValueError:
+     except ValueError:
         print("Error: must be format dd/mm/yyyy ")
         userkey = input("press 1 to try again or 0 to exit:")
         if userkey == "0":
