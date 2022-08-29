@@ -3,3 +3,6 @@ sklearn
 pandas
 tensorflow
 streamlit
+numpy
+datetime
+sklearn
