@@ -38,8 +38,8 @@ def peak_app():
   st.header("The date input is required")
   ##while True :
   DOP = st.text_input("Enter the date in the format dd/mm/yyyy")
-  DOP1 = 'DOP'
-  DOP2 = datetime.datetime.strptime(DOP1, "%d/%m/%Y")
+    #DOP = 'DOP'
+    DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
                        
     #try :
         #DOP = str(DOP)
@@ -54,7 +54,7 @@ def peak_app():
   df = pd.read_csv("continuous dataset.csv")
   df["datetime"] = pd.to_datetime(df["datetime"])
   df.set_index("datetime").head(2)
-  df[df["datetime"].between(DOP2,DOP2 + timedelta(hours=24))]
+  df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
   df.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
   x_peak_demand = df.copy()
   col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
