@@ -37,7 +37,7 @@ def peak_app():
   """)
   st.header("The date input is required")
   ##while True :
-  DOP = '12/04/2016'
+  DOP = st.text_input("Enter the date in the format dd/mm/yyyy")
   DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
                        
     #try :
@@ -65,6 +65,6 @@ def peak_app():
 
 
   if st.button("Click here to make the Peak Demand Prediction", key=3):
-    st.text_area(label='Load prediction is:- ',value=result_peak , height= 100,)
+    st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
 
 run = peak_app()
