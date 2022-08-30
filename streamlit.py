@@ -13,9 +13,6 @@ import xgboost as xgb
 import tensorflow as tf
 import pandas as pd
 import streamlit as st
-import numpy
-import sys
-from datetime import timedelta, date
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
@@ -91,9 +88,9 @@ def web_app():
 
   data=[[T2M_toc1,QV2M_toc1,TQL_toc1,W2M_toc1,T2M_san1,QV2M_san1,TQL_san1,W2M_san1,T2M_dav1,QV2M_dav1,TQL_dav1,W2M_dav1,Holiday_ID1,holiday1,school1,hour1,month1,day1]]
 
-  df1=pd.DataFrame(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
+  df=pd.DataFrame(data,columns=['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day'])
 
-  df1
+  df
     
   #data={'T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day':[T2M_toc,QV2M_toc,TQL_toc,W2M_toc,T2M_san,QV2M_san,TQL_san,W2M_san,T2M_dav,QV2M_dav,TQL_dav,W2M_dav,Holiday_ID,holiday,school,hour,month,day]}
 
@@ -104,7 +101,7 @@ def web_app():
 #dfe
   
   
-  result = model_j.predict(df1)
+  result = model_j.predict(df)
   
   if st.button("Click here to make the Prediction"):
     st.text_area(label='Load prediction is:- ',value=result , height= 100)
