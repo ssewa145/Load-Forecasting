@@ -75,7 +75,7 @@ def peak_app():
 
 
   if st.button("Click here to make the Peak Demand Prediction", key=3):
-    st.text_area(label='Load prediction is:- ',value=result_peak , height= 100, key=6)
+    st.text_area(label='Load prediction is:- ',value=result_peak , height= 100,)
 
 
 def web_app():
