@@ -39,7 +39,7 @@ def peak_app():
   ##while True :
   DOP_1 = st.date_input("Enter the date in the format dd/mm/yyyy")
   DOP = str(DOP_1)
-  DOP = datetime.datetime.strptime(DOP, "%y/%m/%d")
+  DOP = datetime.datetime.strptime(DOP, "%d/%m/%y %H:%M:%S.%f)
                        
     #try :
         #DOP = str(DOP)
