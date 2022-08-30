@@ -148,8 +148,8 @@ def web_app():
   
 if st.button("Click here to determine PEAK demand for the day", key=1):
   run = peak_app()
-if st.button("Click here to determine HOURLY demand for the day", key=2):
-  run = web_app()
+#if st.button("Click here to determine HOURLY demand for the day", key=2):
+  #run = web_app()
 #if st.button("Click here to determine PEAK demand for the day", key=1):
  #   run = peak_app()
 #if st.button("Click here to determine HOURLY demand for the day", key=2):
