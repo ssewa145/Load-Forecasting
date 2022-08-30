@@ -58,15 +58,17 @@ def peak_app():
   df = pd.read_csv("continuous dataset.csv")
   df["datetime"] = pd.to_datetime(df["datetime"])
   df.set_index("datetime").head(2)
-  df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
-  df.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
-  x_peak_demand = df.copy()
+  df1 = df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
+  df1.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
+  x_peak_demand = df1.copy()
   col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
   factors = x_peak_demand[col_names]
   scaler = StandardScaler().fit(factors.values)
   factors = scaler.transform(factors.values)
   x_peak_demand[col_names] = factors
-  result_peak = numpy.amax(model_j.predict(x_peak_demand))
+  df1['predictions'] = model_j.predict(x_peak_demand)
+  result_peak = numpy.amax(df1['predictions'])
+  
 
 
   if st.button("Click here to make the Peak Demand Prediction", key=3):
