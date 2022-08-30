@@ -37,7 +37,7 @@ def peak_app():
   """)
   st.header("The date input is required")
   ##while True :
-  DOP = st.text_input("Enter the date in the format dd/mm/yyyy")
+  DOP = st.text_input('Enter the date in the format dd/mm/yyyy')
   DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
                        
     #try :
