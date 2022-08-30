@@ -41,7 +41,7 @@ def peak_app():
   #DOP = str(DOP_1)
   #DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
   DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
-  st.write(DOP_1)
+  st.write('Please wait. The Software will determine the peak load of:', DOP_1)
   DOP = str(DOP_1)
   DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
                        
