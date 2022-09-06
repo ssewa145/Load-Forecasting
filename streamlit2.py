@@ -73,6 +73,7 @@ def web_app():
       plt.xlabel('hours')
       plt.ylabel('Demand(MW)')
       plt.xlim(0,100)
+      plt.ylim(0,2000)
       location = 0 # For the best location
       legend_drawn_flag = True
       plt.legend(["Actual", "Forecast"], loc=0, frameon=legend_drawn_flag)
