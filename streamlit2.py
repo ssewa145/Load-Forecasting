@@ -70,6 +70,7 @@ def web_app():
       datetime = df2['hours']
       plt.plot(datetime, actual, label = "actual")
       plt.plot(datetime, forecast, label = "forecast")
+      ax.legend()
       plt.xlabel('hours')
       plt.ylabel('Demand(MW)')
       plt.xlim(0,100)
