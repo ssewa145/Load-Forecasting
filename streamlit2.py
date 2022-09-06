@@ -71,7 +71,7 @@ def web_app():
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
       df3 = df.copy()
       DOP_1 = df3.iat[0,20]
-      DOP_1
+      st.write(DOP_1)
       #while DOP_1 != 0:
       DOP = str(DOP_1)
       DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
