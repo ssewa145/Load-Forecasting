@@ -40,6 +40,7 @@ def web_app():
   ## This app predicts the load to be supplied by the utility
   """)
   uploaded_file = st.file_uploader("Drag and drop the file here")
+  df_2 = pd.read_csv(uploaded_file)
   if st.button("Submit"):
       df = pd.read_csv(uploaded_file)
       df1 = df.copy()
@@ -68,8 +69,8 @@ def web_app():
       plt.xlabel('Demand(MW)')
       plt.show()
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
-      df[pd.read_csv(uploaded_file)]
-      DOP_1 = df.iat[1,0]
+      #df2 =df[pd.read_csv(uploaded_file)]
+      DOP_1 = df_2.iat[1,0]
       while DOP_1 != 0:
         DOP = str(DOP_1)
         DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
