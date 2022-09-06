@@ -56,28 +56,28 @@ def web_app():
       #print(x_peak_demand)
       #df['prediction'] = model_j.predict(x_peak_demand)
       #df
-
-      df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
-      df
-      actual = df['nat_demand']
-      forecast = df['predictions']
-      datetime = df['datetime']
+      df2 = df.copy()
+      df2.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
+      df2
+      actual = df2['nat_demand']
+      forecast = df2['predictions']
+      datetime = df2['datetime']
       plt.plot(datetime, actual, label = "actual")
       plt.plot(datetime, forecast, label = "forecast")
       plt.xlabel('Date_Time')
       plt.xlabel('Demand(MW)')
       plt.show()
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
-      #df2 =df[pd.read_csv(uploaded_file)]
-      DOP_1 = df_2.iat[1,0]
+      df3 = df.copy()
+      DOP_1 = df3.iat[1,0]
       while DOP_1 != 0:
         DOP = str(DOP_1)
         DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
-        df = pd.read_csv(uploaded_file)
-        df["datetime"] = pd.to_datetime(df["datetime"])
-        df.set_index("datetime").head(2)
-        df1 = df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
-        result_peak = numpy.amax(df1['predictions'])
+        #df = pd.read_csv(uploaded_file)
+        df3["datetime"] = pd.to_datetime(df3["datetime"])
+        df3.set_index("datetime").head(2)
+        df4 = df[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
+        result_peak = numpy.amax(df4['predictions'])
         st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
     #try :
         #DOP = str(DOP)
