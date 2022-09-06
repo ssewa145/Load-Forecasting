@@ -65,8 +65,8 @@ def web_app():
   plt.plot(datetime, forecast, label = "forecast")
   plt.xlabel('Date_Time')
   plt.xlabel('Demand(MW)')
-  plt.show()
-  st.pyplot(plt.show())
+  fig = plt.show()
+  st.pyplot(fig)
   #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
 
 
