@@ -82,23 +82,7 @@ def web_app():
       st.pyplot(fig)
       
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
-      df3 = df.copy()
-      DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
-      st.write('The Software will determine the peak load of:', DOP_1)
-      DOP = str(DOP_1)
-      #DOP_1 = df3.iat[0,20]
-      #st.dataframe(DOP_1)
-      #st.write(DOP_1)
-      #while DOP_1 != 0:
-      #DOP = str(DOP_1)
-      DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
-        #df = pd.read_csv(uploaded_file)
-      df3["datetime"] = pd.to_datetime(df3["datetime"])
-      df3.set_index("datetime").head(2)
-      df4 = df[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
-      result_peak = numpy.amax(df4['predictions'])
-      st.write('Peak demand of', DOP)
-      st.write('is:', result_peak)
+      
       #st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
     #try :
         #DOP = str(DOP)
@@ -125,5 +109,36 @@ def web_app():
   #result_peak = numpy.amax(df1['predictions'])
 
 
+def peak_app():
+  DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
+  st.write('Please wait. The Software will determine the peak load of:', DOP_1)
+  DOP = str(DOP_1)
+  DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
+                       
+    #try :
+        #DOP = str(DOP)
+        #DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
+        #break
+    #except ValueError:
+        #print("Error: must be format dd/mm/yyyy ")
+        #userkey = st.input("press 1 to try again or 0 to exit:")
+        #if userkey == "0":
+            #sys.exit()
+  
+  df3 = df2.copy()
+  df3["datetime"] = pd.to_datetime(df3["datetime"])
+  df3.set_index("datetime").head(2)
+  df4 = df3[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
+  #df4.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
+  #x_peak_demand = df1.copy()
+  #col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
+  #factors = x_peak_demand[col_names]
+  #scaler = StandardScaler().fit(factors.values)
+  #factors = scaler.transform(factors.values)
+  #x_peak_demand[col_names] = factors
+  #df1['predictions'] = model_j.predict(x_peak_demand)
+  result_peak = numpy.amax(df1['predictions'])
+  result_peak
 
 run = web_app()
+run = peak_app()
