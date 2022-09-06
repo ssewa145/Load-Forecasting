@@ -60,6 +60,11 @@ def web_app():
       df2 = df.copy()
       df2.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
       df2
+      line_chart_data = df2.copy()
+      line_chart_data['datetime'] = pd.to_datetime.(line_chart_data['datetime'])
+      line_chart_data['pickup_hour'] = line_chart_data['datetime'].dt.hour
+      print(line_chart_data)
+      hour_cross_tab = pd.crosstab
       actual = df2['nat_demand']
       forecast = df2['predictions']
       datetime = df2['datetime']
