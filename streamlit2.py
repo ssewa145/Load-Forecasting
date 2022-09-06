@@ -6,7 +6,6 @@ import pandas as pd
 import streamlit as st
 import numpy
 import sys
-from bokeh.plotting import figure
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
