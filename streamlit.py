@@ -44,8 +44,8 @@ def web_app():
   # Load Forecast Web App
   ## This app predicts the load to be supplied by the utility
   """)
-  st.header("User Details")
-  st.subheader("Kindely Enter The following Details in order to make a prediction")
+  st.header("Enter The following Details in order to make a prediction")
+  #st.subheader("Enter The following Details in order to make a prediction")
   T2M_toc1 = st.number_input("Temperature of Tocumen")
   T2M_toc1 = (T2M_toc1-27.39811537002067)/1.6761489507888916
   QV2M_toc1 = st.number_input("Relative Humidity of Tocumen")
