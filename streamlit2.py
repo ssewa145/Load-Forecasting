@@ -40,7 +40,6 @@ def web_app():
   ## This app predicts the load to be supplied by the utility
   """)
   uploaded_file = st.file_uploader("Drag and drop the file here")
-  df_2 = pd.read_csv(uploaded_file)
   if st.button("Submit"):
       df = pd.read_csv(uploaded_file)
       df1 = df.copy()
