@@ -62,20 +62,8 @@ def web_app():
   #plt.xlabel('Date_Time')
   #plt.xlabel('Demand(MW)')
   #plt.show()
+  st.line_chart(df, 'datetime')
 
 
-  x = 'datetime'
-  y = 'predictions'
-
-  p = figure(
-      title='simple line example',
-      x_axis_label='x',
-      y_axis_label='y')
-
-  p.line(x, y, legend_label='prediction', line_width=2)
-
-  st.bokeh_chart(p, use_container_width=True)
-  #if st.button("Click here to make the Peak Demand Prediction", key=3):
-    #st.write(df)
 
 run = web_app()
