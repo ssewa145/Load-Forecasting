@@ -57,7 +57,7 @@ def peak_app():
             #sys.exit()
   
   df = pd.read_csv(uploaded_file)
-  df.drop('hours')
+  df.drop('hours', axis=1, inplace=True)
   df["datetime"] = pd.to_datetime(df["datetime"])
   df.set_index("datetime").head(2)
   df1 = df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
