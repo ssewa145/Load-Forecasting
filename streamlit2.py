@@ -41,45 +41,47 @@ def web_app():
   ## This app predicts the load to be supplied by the utility
   """)
   uploaded_file = st.file_uploader("Drag and drop the file here")
-  if st.button("Submit"):
-      df = pd.read_csv(uploaded_file)
-      df1 = df.copy()
-      df1.drop(['datetime','date','nat_demand','hours'], axis=1, inplace=True)
-      x_peak_demand = df1.copy()
-      col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
-      factors = x_peak_demand[col_names]
-      scaler = StandardScaler().fit(factors.values)
-      factors = scaler.transform(factors.values)
-      x_peak_demand[col_names] = factors
-      df['predictions'] = model_j.predict(x_peak_demand)
+  st.button("Submit"):
+  df = pd.read_csv(uploaded_file)
+  df1 = df.copy()
+  df1.drop(['datetime','date','nat_demand','hours'], axis=1, inplace=True)
+  x_peak_demand = df1.copy()
+  col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
+  factors = x_peak_demand[col_names]
+  scaler = StandardScaler().fit(factors.values)
+  factors = scaler.transform(factors.values)
+  x_peak_demand[col_names] = factors
+  df['predictions'] = model_j.predict(x_peak_demand)
 
       #x_peak_demand[col_names] = factors
       #print(x_peak_demand)
       #df['prediction'] = model_j.predict(x_peak_demand)
       #df
-      df2 = df.copy()
-      df2.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
-      df2
-      line_chart_data = df2.copy()
-      line_chart_data['datetime'] = pd.to_datetime(line_chart_data['datetime'])
-      line_chart_data['pickup_hour'] = line_chart_data['datetime'].dt.hour
-      hour_cross_tab = pd.crosstab(line_chart_data['pickup_hour'], line_chart_data['predictions'])
-      #fig = px.line(hour_cross_tab)
-      actual = df2['nat_demand']
-      forecast = df2['predictions']
-      datetime = df2['hours']
-      plt.plot(datetime, actual, label = "actual")
-      plt.plot(datetime, forecast, label = "forecast")
-      plt.xlabel('hours')
-      plt.ylabel('Demand(MW)')
-      plt.xlim(0,100)
-      plt.ylim(0,2000)
-      location = 0 # For the best location
-      legend_drawn_flag = True
-      plt.legend(["Actual", "Forecast"], loc=0, frameon=legend_drawn_flag)
-      plt.show()
-      fig = plt.show()
-      st.pyplot(fig)
+  df2 = df.copy()
+  df2.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
+  df2
+  line_chart_data = df2.copy()
+  line_chart_data['datetime'] = pd.to_datetime(line_chart_data['datetime'])
+  line_chart_data['pickup_hour'] = line_chart_data['datetime'].dt.hour
+  hour_cross_tab = pd.crosstab(line_chart_data['pickup_hour'], line_chart_data['predictions'])
+  #fig = px.line(hour_cross_tab)
+  actual = df2['nat_demand']
+  forecast = df2['predictions']
+  datetime = df2['hours']
+  plt.plot(datetime, actual, label = "actual")
+  plt.plot(datetime, forecast, label = "forecast")
+  plt.xlabel('hours')
+  plt.ylabel('Demand(MW)')
+  plt.xlim(0,100)
+  plt.ylim(0,2000)
+  location = 0 # For the best location
+  legend_drawn_flag = True
+  plt.legend(["Actual", "Forecast"], loc=0, frameon=legend_drawn_flag)
+  plt.show()
+  fig = plt.show()
+  st.pyplot(fig)
+        
+  
       
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
       
