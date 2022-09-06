@@ -7,6 +7,7 @@ import streamlit as st
 import numpy
 import sys
 import matplotlib
+from datetime import timedelta, date
 from matplotlib import pyplot as plt
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
