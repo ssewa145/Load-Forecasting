@@ -61,7 +61,7 @@ def web_app():
   #plt.xlabel('Date_Time')
   #plt.xlabel('Demand(MW)')
   #plt.show()
-  st.line_chart(df, 'datetime')
+  st.line_chart(df, *, 'datetime')
 
 
 
