@@ -68,6 +68,40 @@ def web_app():
       plt.xlabel('Demand(MW)')
       plt.show()
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
+      df2 = pd.read_csv(uploaded_file)
+      DOP_1 = df.iat[1,0]
+      while DOP_1 != 0:
+        DOP = str(DOP_1)
+        DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
+        df = pd.read_csv(uploaded_file)
+        df["datetime"] = pd.to_datetime(df["datetime"])
+        df.set_index("datetime").head(2)
+        df1 = df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
+        result_peak = numpy.amax(df1['predictions'])
+        st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
+    #try :
+        #DOP = str(DOP)
+        #DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
+        #break
+    #except ValueError:
+        #print("Error: must be format dd/mm/yyyy ")
+        #userkey = st.input("press 1 to try again or 0 to exit:")
+        #if userkey == "0":
+            #sys.exit()
+  
+ # df = pd.read_csv("continuous dataset.csv")
+  #df["datetime"] = pd.to_datetime(df["datetime"])
+  #df.set_index("datetime").head(2)
+  #df1 = df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
+  #df1.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
+  #x_peak_demand = df1.copy()
+  #col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
+  #factors = x_peak_demand[col_names]
+  #scaler = StandardScaler().fit(factors.values)
+  #factors = scaler.transform(factors.values)
+  #x_peak_demand[col_names] = factors
+  #df1['predictions'] = model_j.predict(x_peak_demand)
+  #result_peak = numpy.amax(df1['predictions'])
 
 
 
