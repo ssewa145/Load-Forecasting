@@ -72,7 +72,7 @@ def web_app():
       plt.plot(datetime, forecast, label = "forecast")
       plt.xlabel('Date_Time')
       plt.ylabel('Demand(MW)')
-      plt.xlim(('01/06/2020','08/06/2020')
+      plt.xlim('01/06/2020','08/06/2020')
       plt.show()
       fig = plt.show()
       st.pyplot(fig)
