@@ -6,4 +6,4 @@ streamlit
 numpy
 datetime
 sklearn
-google
+google-colab
