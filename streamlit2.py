@@ -1,4 +1,3 @@
-pip install matplotlib
 import time
 import datetime
 import xgboost as xgb
@@ -7,7 +6,6 @@ import pandas as pd
 import streamlit as st
 import numpy
 import sys
-#import matplotlib.pyplot as plt
 from bokeh.plotting import figure
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
