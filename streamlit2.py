@@ -1,4 +1,4 @@
-pip install google-colab
+#pip install google-colab
 import time
 import datetime
 import xgboost as xgb
