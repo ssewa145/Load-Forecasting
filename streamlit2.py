@@ -45,7 +45,7 @@ def web_app():
   """)
   uploaded_file = st.file_uploader("Drag and drop the file here")
   df = pd.read_csv(uploaded_file)
-  df1.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
+  df1 = df.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
   x_peak_demand = df1.copy()
   col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
   factors = x_peak_demand[col_names]
