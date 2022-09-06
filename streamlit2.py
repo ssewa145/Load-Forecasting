@@ -82,23 +82,23 @@ def web_app():
       st.pyplot(fig)
       
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
-      df3 = df.copy()
-      DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
-      st.write('The Software will determine the peak load of:', DOP_1)
-      DOP = str(DOP_1)
+  df3 = df.copy()
+  DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
+  st.write('The Software will determine the peak load of:', DOP_1)
+  DOP = str(DOP_1)
       #DOP_1 = df3.iat[0,20]
       #st.dataframe(DOP_1)
       #st.write(DOP_1)
       #while DOP_1 != 0:
       #DOP = str(DOP_1)
-      DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
+  DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
         #df = pd.read_csv(uploaded_file)
-      df3["datetime"] = pd.to_datetime(df3["datetime"])
-      df3.set_index("datetime").head(2)
-      df4 = df[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
-      result_peak = numpy.amax(df4['predictions'])
-      st.write('Peak demand of', DOP)
-      st.write('is:', result_peak)
+  df3["datetime"] = pd.to_datetime(df3["datetime"])
+  df3.set_index("datetime").head(2)
+  df4 = df[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
+  result_peak = numpy.amax(df4['predictions'])
+  st.write('Peak demand of', DOP)
+  st.write('is:', result_peak)
       #st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
     #try :
         #DOP = str(DOP)
