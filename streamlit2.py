@@ -60,6 +60,7 @@ def web_app():
   df
   actual = df['nat_demand']
   forecast = df['predictions']
+  datetime = df['datetime']
   plt.plot(datetime, actual, label = "actual")
   plt.plot(datetime, forecast, label = "forecast")
   plt.xlabel('Date_Time')
