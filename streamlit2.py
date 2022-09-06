@@ -35,7 +35,7 @@ def web_app():
   # Load Forecast Web App
   ## This app predicts the load to be supplied by the utility
   """)
-  st.file_uploader("Drag and drop the file here")
+  uploaded_file = st.file_uploader("Drag and drop the file here")
   df = pd.read_csv(uploaded_file)
   df1 = df.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
   x_peak_demand = df1.copy()
