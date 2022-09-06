@@ -71,15 +71,15 @@ def web_app():
       df3 = df.copy()
       DOP_1 = df3.iat[0,20]
       DOP_1
-      while DOP_1 != 0:
-        DOP = str(DOP_1)
-        DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
+      #while DOP_1 != 0:
+      DOP = str(DOP_1)
+      DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
         #df = pd.read_csv(uploaded_file)
-        df3["datetime"] = pd.to_datetime(df3["datetime"])
-        df3.set_index("datetime").head(2)
-        df4 = df[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
-        result_peak = numpy.amax(df4['predictions'])
-        st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
+      df3["datetime"] = pd.to_datetime(df3["datetime"])
+      df3.set_index("datetime").head(2)
+      df4 = df[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
+      result_peak = numpy.amax(df4['predictions'])
+      st.text_area(label='Peak demand for the day is:- ',value=result_peak , height= 100,)
     #try :
         #DOP = str(DOP)
         #DOP = datetime.datetime.strptime(DOP, "%d/%m/%Y")
