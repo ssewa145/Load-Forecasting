@@ -40,6 +40,7 @@ def peak_app():
   #DOP_1 = st.date_input("Enter the date in the format dd/mm/yyyy", datetime.datetime(%d/%m/%Y))
   #DOP = str(DOP_1)
   #DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
+  uploaded_file = st.file_uploader("Drag and drop the file here")
   DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
   st.write('Please wait. The Software will determine the peak load of:', DOP_1)
   DOP = str(DOP_1)
@@ -55,7 +56,7 @@ def peak_app():
         #if userkey == "0":
             #sys.exit()
   
-  df = pd.read_csv("continuous dataset.csv")
+  df = pd.read_csv(uploaded_file)
   df["datetime"] = pd.to_datetime(df["datetime"])
   df.set_index("datetime").head(2)
   df1 = df[df["datetime"].between(DOP,DOP + timedelta(hours=24))]
