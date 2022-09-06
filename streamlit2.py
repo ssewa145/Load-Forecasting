@@ -58,8 +58,10 @@ def web_app():
   
   #df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
   df
-  plt.plot(datetime, nat_demand, label = "nat_demand")
-  plt.plot(datetime, predictions, label = "predictions")
+  actual = df['nat_demand']
+  forecast = df['predictions']
+  plt.plot(datetime, actual, label = "actual")
+  plt.plot(datetime, forecast, label = "forecast")
   plt.xlabel('Date_Time')
   plt.xlabel('Demand(MW)')
   plt.show()
