@@ -7,7 +7,8 @@ import pandas as pd
 import streamlit as st
 import numpy
 import sys
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+from bokeh.plotting import figure
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
@@ -55,13 +56,27 @@ def web_app():
   #print(x_peak_demand)
   #df['prediction'] = model_j.predict(x_peak_demand)
   #df
-  df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
-  df
-  plt.plot(datetime, nat_demand, label = "nat_demand")
-  plt.plot(datetime, predictions, label = "predictions")
-  plt.xlabel('Date_Time')
-  plt.xlabel('Demand(MW)')
-  plt.show()
+  
+  #df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
+  #df
+  #plt.plot(datetime, nat_demand, label = "nat_demand")
+  #plt.plot(datetime, predictions, label = "predictions")
+  #plt.xlabel('Date_Time')
+  #plt.xlabel('Demand(MW)')
+  #plt.show()
+
+
+  x = 'datetime'
+  y = 'predictions'
+
+  p = figure(
+      title='simple line example',
+      x_axis_label='x',
+      y_axis_label='y')
+
+  p.line(x, y, legend_label='prediction', line_width=2)
+
+  st.bokeh_chart(p, use_container_width=True)
   #if st.button("Click here to make the Peak Demand Prediction", key=3):
     #st.write(df)
 
