@@ -40,33 +40,34 @@ def web_app():
   ## This app predicts the load to be supplied by the utility
   """)
   uploaded_file = st.file_uploader("Drag and drop the file here")
-  df = pd.read_csv(uploaded_file)
-  df1 = df.copy()
-  df1.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
-  x_peak_demand = df1.copy()
-  col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
-  factors = x_peak_demand[col_names]
-  scaler = StandardScaler().fit(factors.values)
-  factors = scaler.transform(factors.values)
-  x_peak_demand[col_names] = factors
-  df['predictions'] = model_j.predict(x_peak_demand)
+  if st.button("Submit"):
+      df = pd.read_csv(uploaded_file)
+      df1 = df.copy()
+      df1.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
+      x_peak_demand = df1.copy()
+      col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
+      factors = x_peak_demand[col_names]
+      scaler = StandardScaler().fit(factors.values)
+      factors = scaler.transform(factors.values)
+      x_peak_demand[col_names] = factors
+      df['predictions'] = model_j.predict(x_peak_demand)
 
-  #x_peak_demand[col_names] = factors
-  #print(x_peak_demand)
-  #df['prediction'] = model_j.predict(x_peak_demand)
-  #df
-  
-  df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
-  df
-  actual = df['nat_demand']
-  forecast = df['predictions']
-  datetime = df['datetime']
-  plt.plot(datetime, actual, label = "actual")
-  plt.plot(datetime, forecast, label = "forecast")
-  plt.xlabel('Date_Time')
-  plt.xlabel('Demand(MW)')
-  plt.show()
-  #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
+      #x_peak_demand[col_names] = factors
+      #print(x_peak_demand)
+      #df['prediction'] = model_j.predict(x_peak_demand)
+      #df
+
+      df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
+      df
+      actual = df['nat_demand']
+      forecast = df['predictions']
+      datetime = df['datetime']
+      plt.plot(datetime, actual, label = "actual")
+      plt.plot(datetime, forecast, label = "forecast")
+      plt.xlabel('Date_Time')
+      plt.xlabel('Demand(MW)')
+      plt.show()
+      #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
 
 
 
