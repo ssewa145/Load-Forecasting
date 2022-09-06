@@ -71,7 +71,7 @@ def web_app():
       plt.plot(datetime, actual, label = "actual")
       plt.plot(datetime, forecast, label = "forecast")
       plt.xlabel('Date_Time')
-      plt.xlabel('Demand(MW)')
+      plt.ylabel('Demand(MW)')
       plt.show()
       fig = plt.show()
       st.pyplot(fig)
