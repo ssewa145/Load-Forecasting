@@ -61,7 +61,7 @@ def web_app():
   #plt.xlabel('Date_Time')
   #plt.xlabel('Demand(MW)')
   #plt.show()
-  st.line_chart(df, *, 'datetime', ['natdemand','predictions', width=10, height=10, use_container_width=True)
+  st.line_chart(df, 'datetime', ['natdemand','predictions', width=10, height=10, use_container_width=True)
 
 
 
