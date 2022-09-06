@@ -6,6 +6,8 @@ import pandas as pd
 import streamlit as st
 import numpy
 import sys
+import matplotlib
+from matplotlib import pyplot as plt
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
@@ -55,13 +57,13 @@ def web_app():
   #df
   
   #df.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
-  #df
-  #plt.plot(datetime, nat_demand, label = "nat_demand")
-  #plt.plot(datetime, predictions, label = "predictions")
-  #plt.xlabel('Date_Time')
-  #plt.xlabel('Demand(MW)')
-  #plt.show()
-  st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
+  df
+  plt.plot(datetime, nat_demand, label = "nat_demand")
+  plt.plot(datetime, predictions, label = "predictions")
+  plt.xlabel('Date_Time')
+  plt.xlabel('Demand(MW)')
+  plt.show()
+  #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
 
 
 
