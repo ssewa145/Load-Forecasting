@@ -111,7 +111,7 @@ def web_app():
   #result_peak = numpy.amax(df1['predictions'])
 
 
-def peak_app():
+#def peak_app():
   DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
   st.write('Please wait. The Software will determine the peak load of:', DOP_1)
   DOP = str(DOP_1)
@@ -143,4 +143,3 @@ def peak_app():
   result_peak
 
 run = web_app()
-run = peak_app()
