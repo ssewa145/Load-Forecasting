@@ -63,7 +63,7 @@ def web_app():
       line_chart_data = df2.copy()
       line_chart_data['datetime'] = pd.to_datetime(line_chart_data['datetime'])
       line_chart_data['pickup_hour'] = line_chart_data['datetime'].dt.hour
-      print(line_chart_data)
+      line_chart_data
       #hour_cross_tab = pd.crosstab
       actual = df2['nat_demand']
       forecast = df2['predictions']
