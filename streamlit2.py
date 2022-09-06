@@ -73,6 +73,9 @@ def web_app():
       plt.xlabel('Date_Time')
       plt.xlabel('Demand(MW)')
       plt.show()
+      fig = plt.show()
+      st.pyplot(fig)
+      
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
       df3 = df.copy()
       DOP_1 = df3.iat[0,20]
