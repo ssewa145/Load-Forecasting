@@ -4,8 +4,6 @@ import xgboost as xgb
 import tensorflow as tf
 import pandas as pd
 import streamlit as st
-#import google
-#from google.colab import files
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 standard_scaler = StandardScaler()
