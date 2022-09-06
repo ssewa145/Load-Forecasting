@@ -67,12 +67,12 @@ def web_app():
       #fig = px.line(hour_cross_tab)
       actual = df2['nat_demand']
       forecast = df2['predictions']
-      datetime = df2['datetime']
+      datetime = df2['hours']
       plt.plot(datetime, actual, label = "actual")
       plt.plot(datetime, forecast, label = "forecast")
-      plt.xlabel('Date_Time')
+      plt.xlabel('hours')
       plt.ylabel('Demand(MW)')
-      plt.xlim(pd.to_datetime(datetime['01/06/2020']),pd.to_datetime(datetime['08/06/2020']))
+      plt.xlim(0,100)
       plt.show()
       fig = plt.show()
       st.pyplot(fig)
