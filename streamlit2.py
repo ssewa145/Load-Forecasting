@@ -37,10 +37,9 @@ model_j.compile(
 
 def web_app():
   st.write("""
-  # Load Forecast Web App
-  ## This app predicts the load to be supplied by the utility
+  # Load Forecast
   """)
-  uploaded_file = st.file_uploader("Drag and drop the file here")
+  uploaded_file = st.file_uploader("Drag and drop the csv data file here")
   st.button("Submit")
   df = pd.read_csv(uploaded_file)
   df1 = df.copy()
