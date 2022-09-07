@@ -33,7 +33,6 @@ model_j.compile(
 def peak_app():
   st.write("""
   # Peak Load
-  ## This will determine the peak demand for a given day
   """)
   st.header("The date input is required")
   ##while True :
