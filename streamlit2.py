@@ -111,10 +111,10 @@ def web_app():
 
 
 #def peak_app():
-  DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
-  st.write('Please wait. The Software will determine the peak load of:', DOP_1)
-  DOP = str(DOP_1)
-  DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
+ # DOP_1 = st.text_input("Enter the date in the format dd/mm/yyyy")
+  #st.write('Please wait. The Software will determine the peak load of:', DOP_1)
+  #DOP = str(DOP_1)
+ # DOP = datetime.datetime.strptime(DOP, '%d/%m/%Y')
                        
     #try :
         #DOP = str(DOP)
@@ -126,10 +126,10 @@ def web_app():
         #if userkey == "0":
             #sys.exit()
   
-  df3 = df2.copy()
-  df3["datetime"] = pd.to_datetime(df3["datetime"])
-  df3.set_index("datetime").head(2)
-  df4 = df3[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
+  #df3 = df2.copy()
+  #df3["datetime"] = pd.to_datetime(df3["datetime"])
+  #df3.set_index("datetime").head(2)
+  #df4 = df3[df3["datetime"].between(DOP,DOP + timedelta(hours=24))]
   #df4.drop(['datetime','date','nat_demand'], axis=1, inplace=True)
   #x_peak_demand = df1.copy()
   #col_names = ['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day']
@@ -138,7 +138,7 @@ def web_app():
   #factors = scaler.transform(factors.values)
   #x_peak_demand[col_names] = factors
   #df1['predictions'] = model_j.predict(x_peak_demand)
-  result_peak = numpy.amax(df1['predictions'])
+  result_peak = numpy.amax(df['predictions'])
   result_peak
 
 run = web_app()
