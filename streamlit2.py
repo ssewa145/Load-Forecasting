@@ -79,7 +79,11 @@ def web_app():
   plt.show()
   fig = plt.show()
   st.pyplot(fig)
-        
+  result_peak = numpy.amax(df['predictions'])
+  result_peak
+  st.write('The Peak Demand for the day is :', result_peak)
+
+run = web_app()      
   
       
       #st.line_chart(df, 'datetime', ['natdemand','predictions'], width=10, height=10, use_container_width=True)
@@ -138,8 +142,4 @@ def web_app():
   #factors = scaler.transform(factors.values)
   #x_peak_demand[col_names] = factors
   #df1['predictions'] = model_j.predict(x_peak_demand)
-  result_peak = numpy.amax(df['predictions'])
-  result_peak
-  st.write('The Peak Demand for the day is :', result_peak)
-
-run = web_app()
+ 
