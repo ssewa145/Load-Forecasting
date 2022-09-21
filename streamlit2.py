@@ -51,11 +51,6 @@ def web_app():
   factors = scaler.transform(factors.values)
   x_peak_demand[col_names] = factors
   df['predictions'] = model_j.predict(x_peak_demand)
-
-      #x_peak_demand[col_names] = factors
-      #print(x_peak_demand)
-      #df['prediction'] = model_j.predict(x_peak_demand)
-      #df
   df2 = df.copy()
   df2.drop(['T2M_toc','QV2M_toc','TQL_toc','W2M_toc','T2M_san','QV2M_san','TQL_san','W2M_san','T2M_dav','QV2M_dav','TQL_dav','W2M_dav','Holiday_ID','holiday','school','hour','month','day','date'], axis=1, inplace=True)
   df2
