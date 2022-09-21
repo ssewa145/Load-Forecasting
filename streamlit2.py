@@ -140,5 +140,6 @@ def web_app():
   #df1['predictions'] = model_j.predict(x_peak_demand)
   result_peak = numpy.amax(df['predictions'])
   result_peak
+  st.write('The Peak Demand for the day is :', result_peak)
 
 run = web_app()
